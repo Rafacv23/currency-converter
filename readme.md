@@ -27,7 +27,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ## Live Demo 
 
-Check out the live demo of the Weather App [here](https://currency-converter-nu-eight.vercel.app/).
+Check out the live demo of the Currency Converter App [here](https://currency-converter-nu-eight.vercel.app/).
 
 ## Installation
 
