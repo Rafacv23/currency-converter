@@ -29,7 +29,7 @@ function App () {
   return (
     <div className="App">
       <Header></Header>
-      <ExchangeBox price={price} currencies={currencies} secondCurrencies={secondCurrencies} ></ExchangeBox>
+      <ExchangeBox price={price} currencies={currencies} secondCurrencies={secondCurrencies} data={data} ></ExchangeBox>
     </div>
   )
 }
