@@ -25,7 +25,11 @@ Follow these instructions to get a copy of the project up and running on your lo
 - [Node.js](https://nodejs.org/) installed on your machine
 - [npm](https://www.npmjs.com/) (Node Package Manager) or [yarn](https://yarnpkg.com/) installed
 
-### Installation
+## Live Demo 
+
+Check out the live demo of the Weather App [here](https://currency-converter-nu-eight.vercel.app/).
+
+## Installation
 
 1. Clone the repository to your local machine:
 
