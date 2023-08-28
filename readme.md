@@ -30,6 +30,6 @@ Follow these instructions to get a copy of the project up and running on your lo
 1. Clone the repository to your local machine:
 
    ```shell
-   git clone https://github.com/yourusername/currency-converter-app.git
+   git clone https://github.com/Rafacv23/currency-converter-app.git
 
 Happy hacking! 🌍💱
