@@ -10,20 +10,22 @@ function App () {
   const [secondCurrencies, setSecondCurrencies] = useState("jpy")
   const [price, setPrice] = useState("")
 
-  const changeCurrency = (currency) => {
-    setCurrencies(currency)
-  }
-
-  const changeSecondCurrency = (secondCurrency) => {
-    setSecondCurrencies(secondCurrency)
-  }
-
   const fetchData = async () => {
     try {
       const result = await getData(currencies, secondCurrencies)
       setData(result.data)
       setPrice(result.value)
       console.log(result.data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const changeCurrency = async (currency) => {
+    try {
+      const result = await getData(currency, secondCurrencies)
+      setData(result.data)
+      setPrice(result.value)
     } catch (error) {
       console.error(error)
     }
@@ -44,7 +46,7 @@ function App () {
   return (
     <div className="App">
       <Header></Header>
-      <ExchangeBox changeSecondCurrency={changeSecondCurrency} changeCurrency={changeCurrency} price={price} reverse={reverse} currencies={currencies} secondCurrencies={secondCurrencies} data={data} ></ExchangeBox>
+      <ExchangeBox setCurrencies={setCurrencies} changeCurrency={changeCurrency} price={price} reverse={reverse} currencies={currencies} secondCurrencies={secondCurrencies} data={data} ></ExchangeBox>
     </div>
   )
 }

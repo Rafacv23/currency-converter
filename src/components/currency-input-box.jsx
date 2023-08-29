@@ -2,16 +2,19 @@ import React from "react"
 import Input from "./input"
 import Btn from "./btn"
 
-const CurrencyInputBox = ({ onChange, value, currencies, currencyData, showData, enableData }) => {
-  const handleClick = () => {
+const CurrencyInputBox = ({ setCurrencies, onChange, value, currencies, currencyData, showData, enableData, changeCurrency }) => {
+  const handleClick = (short) => {
     enableData()
+    changeCurrency(short)
+    console.log(short)
+    setCurrencies(short)
   }
   return (
         <div>
             {showData
               ? currencyData.map((currency) => (
                 <ul key={currency.name}>
-                  <button onClick={handleClick} value={currency.short}>
+                  <button onClick={() => handleClick(currency.short)} value={currency.short}>
                     <img src={currency.flag} alt={currency.name}/>
                   </button>
               </ul>))
