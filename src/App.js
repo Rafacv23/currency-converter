@@ -6,12 +6,9 @@ import { getData } from "./data"
 
 function App () {
   const [data, setData] = useState(null)
-  const [currencies, setCurrencies] = useState("")
-  const [secondCurrencies, setSecondCurrencies] = useState("")
+  const [currencies, setCurrencies] = useState("eur")
+  const [secondCurrencies, setSecondCurrencies] = useState("jpy")
   const [price, setPrice] = useState("")
-
-  const currency = "jpy"
-  const secondCurrency = "eur"
 
   const changeCurrency = (currency) => {
     setCurrencies(currency)
@@ -21,25 +18,27 @@ function App () {
     setSecondCurrencies(secondCurrency)
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await getData(currency, secondCurrency)
-        setData(result.data)
-        setPrice(result.value)
-        console.log(result.data)
-      } catch (error) {
-        console.error(error)
-      }
+  const fetchData = async () => {
+    try {
+      const result = await getData(currencies, secondCurrencies)
+      setData(result.data)
+      setPrice(result.value)
+      console.log(result.data)
+    } catch (error) {
+      console.error(error)
     }
-    fetchData()
-    setCurrencies(currency.toUpperCase())
-    setSecondCurrencies(secondCurrency.toUpperCase())
-  }, [])
+  }
 
-  const reverse = (currency, secondCurrency) => {
-    setSecondCurrencies(currency.toUpperCase())
-    setCurrencies(secondCurrency.toUpperCase())
+  useEffect(() => {
+    fetchData()
+  }, [currencies, secondCurrencies])
+
+  const reverse = () => {
+    const tempCurrency = currencies
+    setCurrencies(secondCurrencies)
+    setSecondCurrencies(tempCurrency)
+
+    fetchData()
   }
 
   return (

@@ -3,6 +3,7 @@ import CurrencyInputBox from "../components/currency-input-box"
 import Btn from "../components/btn"
 import CurrencyBox from "../components/currency-box"
 import currencyInfo from "../currency-info"
+import "../styles/exchange-box.css"
 
 const ExchangeBox = ({ currencies, secondCurrencies, price, reverse, changeCurrency }) => {
   const [amount, setAmount] = useState("")
@@ -35,7 +36,7 @@ const ExchangeBox = ({ currencies, secondCurrencies, price, reverse, changeCurre
   return (
         <div>
             <CurrencyInputBox changeCurrency={changeCurrency} showData={showData} enableData={enableData} currencyData={currencyData} value={amount} onChange={getAmount} currencies={currencies}></CurrencyInputBox>
-            <Btn text="reverse" onClick={() => reverse(currencies, secondCurrencies)}></Btn>
+            <Btn className="reverse-btn" text="" onClick={() => reverse(currencies, secondCurrencies)}></Btn>
             <CurrencyBox currencyData={currencyData} showCurrencies={secondCurrencies} text={convertedAmount} currency={secondCurrencies}></CurrencyBox>
         </div>
   )

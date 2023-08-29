@@ -6,7 +6,7 @@ const CurrencyBox = (props) => {
   return (
         <div>
             <Text text={props.text}></Text>
-            <Btn text={props.currency}></Btn>
+            <Btn text={props.currency.toUpperCase()}></Btn>
         </div>
   )
 }

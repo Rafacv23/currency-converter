@@ -2,7 +2,7 @@ import React from "react"
 import Input from "./input"
 import Btn from "./btn"
 
-const CurrencyInputBox = ({ onChange, value, currencies, currencyData, showData, enableData, changeCurrency }) => {
+const CurrencyInputBox = ({ onChange, value, currencies, currencyData, showData, enableData }) => {
   const handleClick = () => {
     enableData()
   }
@@ -16,7 +16,7 @@ const CurrencyInputBox = ({ onChange, value, currencies, currencyData, showData,
                   </button>
               </ul>))
               : (<><Input onChange={onChange} value={value} type="number" min={0} placeholder="Type quantity"></Input>
-            <Btn text={currencies} onClick={enableData}></Btn> </>)}
+            <Btn text={currencies.toUpperCase()} onClick={enableData}></Btn> </>)}
 
         </div>
   )
