@@ -4,7 +4,16 @@ import Text from "./text"
 import Btn from "./btn"
 import "../styles/currency-input-box.css"
 
-const CurrencyInputBox = ({ setCurrencies, onChange, value, currencies, currencyData, showData, enableData, changeCurrency }) => {
+const CurrencyInputBox = ({
+  setCurrencies,
+  onChange,
+  value,
+  currencies,
+  currencyData,
+  showData,
+  enableData,
+  changeCurrency
+}) => {
   const handleClick = (short) => {
     enableData()
     changeCurrency(short)
@@ -15,23 +24,26 @@ const CurrencyInputBox = ({ setCurrencies, onChange, value, currencies, currency
   const selectedCurrency = currencyData.find((currency) => currency.short === currencies)
 
   return (
-    <div>
+    <div className="currencies-display">
       {showData ? (
-        currencyData.map((currency) => (
-          <ul key={currency.name}>
-            <button onClick={() => handleClick(currency.short)} value={currency.short}>
-              <img src={currency.flag} alt={currency.name} />
-            </button>
-          </ul>
-        ))
+        <>
+          <Text text="Select your currency" />
+          {currencyData.map((currency) => (
+            <div key={currency.name}>
+              <button className="change-currency-btn" onClick={() => handleClick(currency.short)} value={currency.short}>
+                <img className="currencies-img" width="70px" src={currency.flag} alt={currency.name} />
+              </button>
+            </div>
+          ))}
+        </>
       ) : (
         <div className="display">
           {selectedCurrency && (
             <>
-              <Text text={selectedCurrency.symbol}></Text>
+              <Text text={selectedCurrency.symbol} />
               <Input className="input" onChange={onChange} value={value} type="number" min={0} placeholder="Type quantity" />
               <Btn className="currency-btn" text={selectedCurrency.short.toUpperCase()} onClick={enableData}>
-                <img width="40px" key={selectedCurrency.name.name} src={selectedCurrency.flag}/>
+                <img width="40px" key={selectedCurrency.name.name} src={selectedCurrency.flag} />
               </Btn>
             </>
           )}
