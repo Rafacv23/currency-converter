@@ -16,6 +16,7 @@
     ],
     "rules": {
         "quotes": ["error", "double"],
-        "react/prop-types": "off" 
+        "react/prop-types": "off" ,
+        "multiline-ternary":"off"
     }
 }

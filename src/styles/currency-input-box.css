@@ -1,0 +1,27 @@
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.currency-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: none;
+    color: #fdfdfd;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    color: #fdfdfd;
+    border-radius: 0.5rem;
+}
