@@ -5,15 +5,12 @@ import "../styles/currency-input-box.css"
 
 const CurrencyInputBoxBelow = ({
   setCurrencies,
-  onChange,
-  value,
   secondCurrencies,
   currencyData,
-  showData,
   enableData,
   changeCurrency,
-  convertedAmount,
-  secondSelectedCurrency // Agregamos secondSelectedCurrency como prop
+  convertedAmount
+
 }) => {
   const handleClick = (short) => {
     enableData()
@@ -25,30 +22,17 @@ const CurrencyInputBoxBelow = ({
   const selectedCurrency = currencyData.find((currency) => currency.short === secondCurrencies)
 
   return (
-    <div>
-      {showData ? (
-        currencyData.map((currency) => (
-          <ul key={currency.name}>
-            <button onClick={() => handleClick(currency.short)} value={currency.short}>
-              <img src={currency.flag} alt={currency.name} />
-            </button>
-          </ul>
-        ))
-      ) : (
-        <div className="display">
-          {selectedCurrency && (
-            <>
+    <>
+        {selectedCurrency
+          ? (<div className="display">
               <Text text={selectedCurrency.symbol}></Text>
               <Text className="input" text={convertedAmount} />
-
-              <Btn className="currency-btn" text={selectedCurrency.short.toUpperCase()} onClick={enableData}>
+              <Btn className="currency-btn" text={selectedCurrency.short.toUpperCase()} onClick={handleClick}>
                 <img width="40px" key={selectedCurrency} src={selectedCurrency.flag} />
               </Btn>
-            </>
-          )}
-        </div>
-      )}
-    </div>
+            </div>)
+          : ("Loading")}
+    </>
   )
 }
 
