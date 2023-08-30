@@ -37,7 +37,7 @@ const ExchangeBox = ({ currencies, secondCurrencies, price, reverse, changeCurre
   return (
         <div>
             <CurrencyInputBox setCurrencies={setCurrencies} changeCurrency={changeCurrency} showData={showData} enableData={enableData} currencyData={currencyData} value={amount} onChange={getAmount} currencies={currencies}></CurrencyInputBox>
-              <Btn className="reverse-btn" text="" onClick={() => reverse(currencies, secondCurrencies)}></Btn>
+              <Btn className="reverse-btn hvr-outline-in" text="" onClick={() => reverse(currencies, secondCurrencies)}></Btn>
             <CurrencyInputBoxBelow setCurrencies={setCurrencies} changeCurrency={changeCurrency} showData={showData} enableData={enableData} currencyData={currencyData} convertedAmount={convertedAmount} onChange={getAmount} secondCurrencies={secondCurrencies}></CurrencyInputBoxBelow>
         </div>
   )

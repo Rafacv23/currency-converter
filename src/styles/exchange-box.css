@@ -1,11 +1,44 @@
 .reverse-btn{
-    background-image: url("https://cdn-icons-png.flaticon.com/128/3833/3833315.png");
+    background-image: url("/reverse-btn.png");
+    padding: 1.5rem;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 3rem;
     height: 3rem;
-    border-radius: 0.5rem;
     border: none;
     margin-top: 1rem;
+    background-color: transparent;
 }
+
+.hvr-outline-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+  }
+  .hvr-outline-in:before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    border: #0095ff solid 2px;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: top, right, bottom, left;
+    transition-property: top, right, bottom, left;
+    border-radius: 2rem;
+  }
+  .hvr-outline-in:hover:before, .hvr-outline-in:focus:before, .hvr-outline-in:active:before {
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    opacity: 1;
+  }
