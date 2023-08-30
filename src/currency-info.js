@@ -76,6 +76,12 @@ const currencyInfo = [
     short: "rub",
     symbol: "₽",
     flag: "https://cdn-icons-png.flaticon.com/128/197/197408.png"
+  },
+  {
+    name: "Rupia india",
+    short: "inr",
+    symbol: "₹",
+    flag: "https://cdn-icons-png.flaticon.com/128/197/197419.png"
   }
 ]
 
