@@ -2,7 +2,7 @@
 
 This is a simple Currency Converter web application built with React and native CSS. It allows users to convert between different currencies using real-time exchange rates fetched from a third-party API. This README provides an overview of the app, its features, and instructions for setting it up and running it on your local machine.
 
-![Currency Converter Screenshot](Currency-Converter.png)
+![Currency Converter Screenshot](./currency-video.gif)
 
 ## Features
 
